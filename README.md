@@ -3,9 +3,9 @@
 ### My name is Mariana Paredes
 
 - 🔭 I’m currently looking for a new job
-- 🌱 I’m currently learning NodeJS and PowerBI
-- 👯 I’m looking to collaborate on projects
-- 💬 Ask me about anything
+- 🌱 I’m learning NodeJS and PowerBI
+- 👯 I’m really like to collaborate on projects
+- 💬 Ask me about anything 
   
 
 
