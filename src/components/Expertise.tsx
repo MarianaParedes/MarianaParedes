@@ -1,7 +1,7 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDocker, faPython, faNodeJs, faDev } from '@fortawesome/free-brands-svg-icons';
+import { faPython, faNodeJs, faDev } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
@@ -54,7 +54,7 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faDev} size="3x"/>
-                    <h3>Full-stack developer</h3>
+                    <h3>Full-stack Developer</h3>
                     <p>I develop full-stack applications, working with backend technologies and Angular on the frontend. I also contribute to requirements analysis, testing and AWS deployments.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
@@ -66,7 +66,7 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>AI - assisted development </h3>
+                    <h3>AI - assisted development</h3>
                     <p>I incorporate AI tools into the development process to improve productivity, explore solutions, and support technical decision-making.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
