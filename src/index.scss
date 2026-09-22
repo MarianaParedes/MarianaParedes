@@ -1,3 +1,5 @@
+:root { --bg-dark: #0d1116; --bg-light: #f8f9fa; --accent: #5000ca; }
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -15,7 +17,7 @@ code {
 
 .main-container {
   position: relative;
-  background-color: #0d1116;
+  background-color: var(--bg-dark);
 
 }
 
@@ -24,7 +26,7 @@ a {
 }
 
 a:hover {
-  color: #5000ca;
+  color: var(--accent);
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 
@@ -35,7 +37,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar {
   justify-content: space-between;
-  background-color: #0d1116;
+  background-color: var(--bg-dark);
 
   button {
     font-size: 1.1rem;
@@ -51,7 +53,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar-responsive {
   span, p {
-    color: #0d1116;
+    color: var(--bg-dark);
     font-family: "Lato", sans-serif;
   }
 }
@@ -93,23 +95,23 @@ p, a, h1, h2, h3, h4, h5, label, button {
 }
 
 .light-mode {
-  background-color: #f8f9fa;
+  background-color: var(--bg-light);
 
   .navigation-bar {
-    background-color: #f8f9fa;
+    background-color: var(--bg-light);
   }
 
   p, a, h1, h2, h3, h4, h5, label, button {
-    color: #0d1116;
+    color: var(--bg-dark);
   }
 
   a:hover {
-    color: #5000ca;
+    color: var(--accent);
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
   }
 
   .navigation-bar svg {
-    color: #0d1116;
+    color: var(--bg-dark);
   }
 
   .about-section {
@@ -142,7 +144,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 
   .flex-chips .chip-title {
-    color: #0d1116;
+    color: var(--bg-dark);
   }
 }
 

@@ -1,44 +1,37 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faDocker, faPython } from '@fortawesome/free-brands-svg-icons';
+import { faPython, faNodeJs, faDev } from '@fortawesome/free-brands-svg-icons';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Expertise.scss';
 
 const labelsFirst = [
-    "React",
+    "NodeJS",
+    "NestJS",
+    "Express",
     "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "SASS",
-    "Flask",
-    "Python",
-    "SQL",
+    "Prisma",
+    "PHP",
+    "API REST",
     "PostgreSQL",
-    "Postman"
+    "Microservices"
 ];
 
 const labelsSecond = [
+    "Angular",
+    "Scrum",
     "Git",
     "GitHub Actions",
+    "Linux",
     "Docker",
     "AWS",
-    "Azure",
-    "Linux",
-    "Snowflake",
-    "Pandas",
-    "Selenium",
+    "Lambda",
 ];
 
 const labelsThird = [
-    "OpenAI",
-    "Groq",
-    "LangChain",
-    "Qdrant",
-    "Hugging Face",
-    "LlamaIndex",
-    "Streamlit",
+    "Claude",
+    "Codex",
+    "SDD",
 ];
 
 function Expertise() {
@@ -48,9 +41,9 @@ function Expertise() {
             <h1>Expertise</h1>
             <div className="skills-grid">
                 <div className="skill">
-                    <FontAwesomeIcon icon={faReact} size="3x"/>
-                    <h3>Full Stack Web Development</h3>
-                    <p>I have built a diverse array of web applications from scratch using modern technologies such as React and Flask. I have a strong proficiency in the SDLC process and frontend + backend development.</p>
+                    <FontAwesomeIcon icon={faNodeJs} size="3x"/>
+                    <h3>Backend Developer</h3>
+                    <p>I have developed a variety of web applications from scratch using technologies such as NodeJS, NestJS, Express, and PHP. I have solid experience with the software development lifecycle (SDLC), with a particular focus on analysis and backend development.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsFirst.map((label, index) => (
@@ -60,9 +53,9 @@ function Expertise() {
                 </div>
 
                 <div className="skill">
-                    <FontAwesomeIcon icon={faDocker} size="3x"/>
-                    <h3>DevOps & Automation</h3>
-                    <p>Once the application is built, I help clients set up DevOps testing, CI/CD pipelines, and deployment automation to support the successful Go-Live.</p>
+                    <FontAwesomeIcon icon={faDev} size="3x"/>
+                    <h3>Full-stack Developer</h3>
+                    <p>I develop full-stack applications, working with backend technologies and Angular on the frontend. I also contribute to requirements analysis, testing and AWS deployments.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsSecond.map((label, index) => (
@@ -73,8 +66,8 @@ function Expertise() {
 
                 <div className="skill">
                     <FontAwesomeIcon icon={faPython} size="3x"/>
-                    <h3>GenAI & LLM</h3>
-                    <p>Stay relevant in the market by leveraging the latest AI models in your projects. I have professional experience building enterprise grade GenAI-enabled solutions to empower intelligent decision making.</p>
+                    <h3>AI - assisted development</h3>
+                    <p>I incorporate AI tools into the development process to improve productivity, explore solutions, and support technical decision-making.</p>
                     <div className="flex-chips">
                         <span className="chip-title">Tech stack:</span>
                         {labelsThird.map((label, index) => (
