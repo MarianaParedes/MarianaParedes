@@ -6,6 +6,9 @@ import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
 
+const isValidEmail = (value: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+
 function Contact() {
 
   const [name, setName] = useState<string>('');
@@ -25,21 +28,24 @@ function Contact() {
   const sendEmail = (e: any) => {
     e.preventDefault();
 
+    const normalizedEmail = email.trim().toLowerCase();
+    const emailIsValid = isValidEmail(normalizedEmail);
+
     setNameError(name === '');
-    setEmailError(email === '');
+    setEmailError(!emailIsValid);
     setMessageError(message === '');
 
     /* Uncomment below if you want to enable the emailJS */
 
-    if (name !== '' && email !== '' && message !== '') {
+    if (name !== '' && emailIsValid && message !== '') {
       if (!serviceId || !templateId || !apiKey) {
-        console.error("EmailJS is not configured. Check the contact form environment variables.");
+        console.error("Check the logs");
         return;
       }
 
       var templateParams = {
         name: name,
-        email: email,
+        email: normalizedEmail,
         message: message
       };
 
@@ -73,6 +79,7 @@ function Contact() {
             <div className='form-flex'>
               <TextField
                 required
+                type="email"
                 id="outlined-required"
                 label="Your Name"
                 placeholder="What's your name?"
@@ -86,14 +93,14 @@ function Contact() {
               <TextField
                 required
                 id="outlined-required"
-                label="Email / Phone"
+                label="Email"
                 placeholder="How can I reach you?"
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
                 error={emailError}
-                helperText={emailError ? "Please enter your email or phone number" : ""}
+                helperText={emailError ? "Please enter a valid email address" : ""}
               />
             </div>
             <TextField
