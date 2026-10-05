@@ -11,9 +11,9 @@ function Project() {
         <h1>Personal Projects</h1>
         <div className="projects-grid">
             <div className="project">
-                <a href="#" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="#" target="_blank" rel="noreferrer"><h2>Turnos Flex</h2></a>
-                <p>Designed, developed, and launched a Turnos management system</p>
+                <a href="https://turnos-flex.vercel.app/login" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://turnos-flex.vercel.app/login" target="_blank" rel="noreferrer"><h2>Turnos Flex</h2></a>
+                <p>Designed, developed, and launched a Turnos management system.</p>
             </div>           
         </div>
     </div>
