@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MarianaParedes/static/css/main.fbd1781d.css",
-    "main.js": "/MarianaParedes/static/js/main.917f50d9.js",
+    "main.js": "/MarianaParedes/static/js/main.566987db.js",
     "static/js/453.476d9f6e.chunk.js": "/MarianaParedes/static/js/453.476d9f6e.chunk.js",
     "static/media/bg-light.png": "/MarianaParedes/static/media/bg-light.f29e2272cc49bb5ae4f0.png",
     "static/media/bg-dark.png": "/MarianaParedes/static/media/bg-dark.bac0efb485244a522981.png",
@@ -9,11 +9,11 @@
     "static/media/avatar.jpg": "/MarianaParedes/static/media/avatar.b1d5899a713e2b14ca2a.jpg",
     "index.html": "/MarianaParedes/index.html",
     "main.fbd1781d.css.map": "/MarianaParedes/static/css/main.fbd1781d.css.map",
-    "main.917f50d9.js.map": "/MarianaParedes/static/js/main.917f50d9.js.map",
+    "main.566987db.js.map": "/MarianaParedes/static/js/main.566987db.js.map",
     "453.476d9f6e.chunk.js.map": "/MarianaParedes/static/js/453.476d9f6e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbd1781d.css",
-    "static/js/main.917f50d9.js"
+    "static/js/main.566987db.js"
   ]
 }
