@@ -13,7 +13,9 @@ function Project() {
             <div className="project">
                 <a href="https://turnos-flex.vercel.app/login" target="_blank" rel="noreferrer"><img src={mock10} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://turnos-flex.vercel.app/login" target="_blank" rel="noreferrer"><h2>Turnos Flex</h2></a>
-                <p>Designed, developed, and launched a Turnos management system.</p>
+                <p>Designed using SDD and built with NextJS and Supabase -  Appointment management system. Try the demo:</p>
+                <p><b>Email:</b>demo@demo.com</p>
+                <p><b>Password:</b>123456</p>
             </div>           
         </div>
     </div>
