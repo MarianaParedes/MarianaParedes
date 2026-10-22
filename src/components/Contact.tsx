@@ -94,8 +94,7 @@ function Contact({ parentToChild }: { parentToChild: { mode: string } }) {
             <div className='form-flex'>
               <TextField
                 required
-                type="email"
-                id="outlined-required"
+                id="outlined-name"
                 label="Your Name"
                 placeholder="What's your name?"
                 value={name}
@@ -107,7 +106,8 @@ function Contact({ parentToChild }: { parentToChild: { mode: string } }) {
               />
               <TextField
                 required
-                id="outlined-required"
+                type="email"
+                id="outlined-email"
                 label="Email"
                 placeholder="How can I reach you?"
                 value={email}
