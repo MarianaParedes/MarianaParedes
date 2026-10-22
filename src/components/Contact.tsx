@@ -5,11 +5,14 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import TextField from '@mui/material/TextField';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const isValidEmail = (value: string) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
 
-function Contact() {
+function Contact({ parentToChild }: { parentToChild: { mode: string } }) {
+  const mode = parentToChild.mode;
 
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
@@ -18,6 +21,12 @@ function Contact() {
   const [nameError, setNameError] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<boolean>(false);
   const [messageError, setMessageError] = useState<boolean>(false);
+
+  const [snackbar, setSnackbar] = useState<{ open: boolean; severity: 'success' | 'error' }>({
+    open: false,
+    severity: 'success',
+  });
+  const [sending, setSending] = useState<boolean>(false);
 
   const form = useRef();
 
@@ -40,26 +49,32 @@ function Contact() {
     if (name !== '' && emailIsValid && message !== '') {
       if (!serviceId || !templateId || !apiKey) {
         console.error("Check the logs");
+        setSnackbar({ open: true, severity: 'error' });
         return;
       }
 
-      var templateParams = {
+      const templateParams = {
         name: name,
         email: normalizedEmail,
         message: message
       };
 
+      setSending(true);
       emailjs.send(serviceId, templateId, templateParams, apiKey).then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
+          setName('');
+          setEmail('');
+          setMessage('');
+          setSnackbar({ open: true, severity: 'success' });
         },
         (error) => {
           console.log('FAILED...', error);
+          setSnackbar({ open: true, severity: 'error' });
         },
-      );
-      setName('');
-      setEmail('');
-      setMessage('');
+      ).finally(() => {
+        setSending(false);
+      });
     }
   };
 
@@ -118,10 +133,42 @@ function Contact() {
               error={messageError}
               helperText={messageError ? "Please enter the message" : ""}
             />
-            <Button variant="contained" endIcon={<SendIcon />} onClick={sendEmail}>
-              Send
+            <Button
+              variant="contained"
+              endIcon={<SendIcon />}
+              onClick={sendEmail}
+              disabled={sending}
+            >
+              {sending ? 'Sending...' : 'Send'}
             </Button>
           </Box>
+          <Snackbar
+            open={snackbar.open}
+            autoHideDuration={snackbar.severity === 'success' ? 4000 : 6000}
+            onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          >
+            <Alert
+              severity={snackbar.severity}
+              variant="filled"
+              onClose={() => setSnackbar((prev) => ({ ...prev, open: false }))}
+              sx={{
+                width: '100%',
+                ...(mode === 'dark'
+                  ? snackbar.severity === 'success'
+                    ? { bgcolor: '#122b1e', color: '#86efac', border: '1px solid rgba(134,239,172,.25)' }
+                    : { bgcolor: '#2f1417', color: '#fca5a5', border: '1px solid rgba(252,165,165,.25)' }
+                  : snackbar.severity === 'success'
+                    ? { bgcolor: '#2e7d32', color: '#fff' }
+                    : { bgcolor: '#c62828', color: '#fff' }),
+                '& .MuiAlert-icon': { color: 'inherit' },
+              }}
+            >
+              {snackbar.severity === 'success'
+                ? "Message sent successfully! I'll get back to you soon."
+                : 'Something went wrong. Please try again.'}
+            </Alert>
+          </Snackbar>
         </div>
       </div>
     </div>
